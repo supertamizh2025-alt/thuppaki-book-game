@@ -1,0 +1,61 @@
+:root {
+    --sun: #FFD93D;
+    --coral: #FF6B6B;
+    --teal: #4ECDC4;
+    --purple: #A29BFE;
+    --green: #6BCB77;
+    --orange: #FF9A3C;
+    --bg: #FFFBF0;
+    --dark: #2D2D2D;
+    --card-shadow: 0 8px 32px rgba(0,0,0,0.10);
+}
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Nunito',sans-serif; background:var(--bg); color:var(--dark); overflow-x:hidden; }
+
+    /* NAV */
+    nav {
+        background:#fff;
+        border-bottom:3px solid var(--sun);
+        padding:0 0.5rem;
+        display:flex; align-items:center; justify-content:space-between;
+        height:68px; position:sticky; top:0; z-index:100;
+        box-shadow:0 2px 12px rgba(0,0,0,0.07);
+    }
+    .nav-logo { font-family:'Baloo Thambi 2',cursive; font-size:1.6rem; font-weight:800; color:var(--coral); text-decoration:none; }
+    .nav-logo span { color:var(--teal); }
+    .nav-links { display:flex; list-style:none; }
+    .nav-links a { font-weight:700; font-size:1rem; color:var(--dark); text-decoration:none; padding:0.3rem 0.7rem; border-radius:8px; transition:background .2s,color .2s; }
+    .nav-links a:hover { background:var(--sun); color:var(--dark); }
+    .nav-links a.active { background:var(--coral); color:#fff; }
+
+    /* HERO */
+    .hero {
+        background:linear-gradient(135deg,#fff5cc 0%,#ffe0e0 50%,#d4f5f1 100%);
+        padding:5rem 2rem 4rem; text-align:center; position:relative; overflow:hidden;
+    }
+    .hero::before { content:''; position:absolute; top:-80px; right:-80px; width:320px; height:320px; background:radial-gradient(circle,var(--sun) 0%,transparent 70%); opacity:.4; border-radius:50%; }
+    .hero::after  { content:''; position:absolute; bottom:-60px; left:-60px; width:240px; height:240px; background:radial-gradient(circle,var(--teal) 0%,transparent 70%); opacity:.3; border-radius:50%; }
+    .hero-badge { display:inline-block; background:var(--sun); color:var(--dark); font-weight:800; font-size:.85rem; padding:.3rem 1rem; border-radius:50px; margin-bottom:1.2rem; letter-spacing:.05em; text-transform:uppercase; }
+    .hero h1 { font-family:'Baloo Thambi 2',cursive; font-size:clamp(2.2rem,5vw,3.8rem); font-weight:800; line-height:1.15; margin-bottom:1rem; }
+    .hero h1 em { font-style:normal; color:var(--coral); }
+    .hero-tamil { font-size:clamp(1.2rem,2.5vw,1.8rem); color:var(--teal); font-family:'Baloo Thambi 2',cursive; font-weight:600; margin-bottom:1.2rem; }
+    .hero p { font-size:1.1rem; max-width:580px; margin:0 auto 2rem; color:#555; line-height:1.7; }
+    .hero-letters { margin-top:3rem; display:flex; justify-content:center; gap:.6rem; flex-wrap:wrap; position:relative; z-index:1; }
+    .letter-bubble { width:62px; height:62px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Baloo Thambi 2',cursive; font-size:1.6rem; font-weight:800; color:#fff; box-shadow:0 4px 16px rgba(0,0,0,.12); animation:float 3s ease-in-out infinite; }
+    .letter-bubble:nth-child(1){background:var(--coral);animation-delay:0s}
+    .letter-bubble:nth-child(2){background:var(--teal);animation-delay:.3s}
+    .letter-bubble:nth-child(3){background:var(--purple);animation-delay:.6s}
+    .letter-bubble:nth-child(4){background:var(--green);animation-delay:.9s}
+    .letter-bubble:nth-child(5){background:var(--orange);animation-delay:1.2s}
+    .letter-bubble:nth-child(6){background:var(--sun);color:var(--dark);animation-delay:1.5s}
+    .letter-bubble:nth-child(7){background:var(--coral);animation-delay:1.8s}
+    .letter-bubble:nth-child(8){background:var(--teal);animation-delay:2.1s}
+    @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+    .hero         { animation:fadeUp .55s ease both; }
+    .games-section{ animation:fadeUp .55s .08s ease both; }
+
+    @media(max-width:600px) {
+        .nav-links .hide-sm { display:none; }
+    }
